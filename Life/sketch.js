@@ -11,14 +11,14 @@ function checkLife() {
 		for (var j = 0; j < rows; j++) {
 			if (!grid[i][j].active) {
 				//Cellule morte si possède 3 voisines vivante => Vie
-				if (grid[i][j].countCell() == 3) {
+				if (grid[i][j].countCell(i,j) == 3) {
 					grid[i][j].active = true;
 				} else {
 					grid[i][j].active = false;
 				}
 			} else {
 				//Doit posséder 2 ou 3 voisines en vie => Vie Sinon Mort
-				if (grid[i][j].countCell() == 2 || grid[i][j].countCell() == 3) {
+				if (grid[i][j].countCell(i,j) == 2 || grid[i][j].countCell(i,j) == 3) {
 					grid[i][j].active = true;
 				} else {
 					grid[i][j].active = false;
